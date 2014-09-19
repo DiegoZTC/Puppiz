@@ -18,7 +18,8 @@
             android:ems="10"
             android:layout_gravity="center_horizontal"
             android:id="@+id/nickname"
-            android:hint="Nickname" />
+            android:hint="Nickname"
+            android:gravity="center" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -27,16 +28,17 @@
             android:hint="Nombre"
             android:ems="10"
             android:layout_gravity="center_horizontal"
-            android:id="@+id/nombre" />
+            android:id="@+id/nombre"
+            android:gravity="center" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
+            android:inputType="textEmailAddress"
             android:ems="10"
-            android:hint="Apellido"
-            android:layout_gravity="center_horizontal"
-            android:id="@+id/apellido" />
+            android:hint="Correo"
+            android:id="@+id/mail"
+            android:gravity="center" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -45,7 +47,8 @@
             android:ems="10"
             android:hint="Contraseña"
             android:layout_gravity="center_horizontal"
-            android:id="@+id/pass1" />
+            android:id="@+id/pass1"
+            android:gravity="center" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -54,7 +57,8 @@
             android:ems="10"
             android:hint="Confirmar contraseña"
             android:layout_gravity="center_horizontal"
-            android:id="@+id/pass2" />
+            android:id="@+id/pass2"
+            android:gravity="center" />
 
     </LinearLayout>
 
@@ -67,7 +71,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Registro"
-            android:id="@+id/btnregistro"
+            android:id="@+id/btnreg"
             android:layout_weight=".5" />
     </LinearLayout>
 </LinearLayout>

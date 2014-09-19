@@ -1,56 +1,59 @@
-<LinearLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/moradoocuro"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:id="@+id/linearLayout"
+    android:background="@color/moradoocuro">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight=".9"
-        android:gravity="center">
+        android:gravity="center" >
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:hint="User"
             android:ems="10"
             android:layout_gravity="center_horizontal"
-            android:id="@+id/edituser"
+            android:id="@+id/mascota"
+            android:hint="Mascota"
             android:gravity="center" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
+            android:inputType="textPersonName"
+            android:hint="Descripción"
             android:ems="10"
-            android:hint="Contraña"
             android:layout_gravity="center_horizontal"
-            android:id="@+id/editpassword"
+            android:id="@+id/Descripcion"
             android:gravity="center" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:hint="Lugar cercano"
+            android:id="@+id/lugsercano"
+            android:gravity="center" />
+
     </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="fill_parent"
-        android:background="@color/moradobotones"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content" >
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login"
-            android:id="@+id/btnlogin"
-            android:layout_weight=".5" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Registro"
-            android:id="@+id/btnregistro"
+            android:text="Reportar perdida"
+            android:id="@+id/btnreportar"
+            android:background="@color/moradobotones"
             android:layout_weight=".5" />
     </LinearLayout>
 </LinearLayout>
