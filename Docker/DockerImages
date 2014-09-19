@@ -1,0 +1,15 @@
+sudo docker pull diegoztc/node-rest
+sudo docker pull dockerfile/mongodb
+
+mkdir -p ~/Docker/mongodb & mkdir -p ~/Docker/nodejs/rest
+
+--Exec
+
+docker run -it --rm -p 27017:27017 -v ~/Docker/mongodb:/data/db --name mongodb dockerfile/mongodb 
+
+docker run -it --rm -p 3000:3000 --name node-rest --link mongodb:mongodb -v ~/Docker/nodejs:/var/www diegoztc/node-rest
+
+-->	cd /var/www/rest
+	npm start
+	
+
