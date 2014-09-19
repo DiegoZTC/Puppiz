@@ -8,11 +8,13 @@ var User  = mongoose.model('User');
 		
 		var user = new User(); 		// create a new instance of the Bear model
 		 // set the bears name (comes from the request)
+		
 		user.username = req.body.username;
 		user.name = req.body.name; 
 		user.email=req.body.email;
 		user.password =req.body.password;
 		
+		 console.log(user);
 		// save the bear and check for errors
 		user.save(function(err) {
 			if (err)
@@ -41,7 +43,15 @@ var User  = mongoose.model('User');
 		});
 	};
 	
-		
+	exports.deleteUser=function(req, res) {
+		User.remove({_id: req.params.user_id
+		}, function(err, user) {
+			if (err)
+				res.send(err);
+			res.json({ message: 'Successfully deleted' });
+		});
+	};
+	
 	// get all the bears (accessed at GET http://localhost:8080/api/bears)
 	exports.getLogin=function(req, res) {
 		User.where('username').equals(req.params.username)

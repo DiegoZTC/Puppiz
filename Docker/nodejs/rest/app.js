@@ -9,6 +9,8 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 
+
+
 var app = express();
 
 // view engine setup
@@ -23,9 +25,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+
 app.use('/', routes);
 app.use('/users', users);
-
+//app.use(express.bodyParser({uploadDir:'/images'}));
 
 //Database connection
 var mongoose = require('mongoose');
@@ -48,11 +52,25 @@ mongoose.connect('mongodb://' + address + ':'+ port_mongo + '/puppiz', function(
 
 
 var model_users = require('./models/user.js')(app,mongoose);
-
+var model_pets = require('./models/pet.js')(app,mongoose);
+var model_searchs = require('./models/search.js')(app,mongoose);
+var model_finds = require('./models/find.js')(app,mongoose);
 	
 var routes_user = require('./routes/user_routes');	
+var routes_pet = require('./routes/pet_routes');	
+var routes_search = require('./routes/search_routes');	
+var routes_find = require('./routes/find_routes');	
+
+
 app.use('/api', routes_user);
 
+app.use('/api', routes_pet);
+
+
+app.use('/api', routes_search);
+
+
+app.use('/api', routes_find);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

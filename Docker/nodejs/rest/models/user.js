@@ -3,10 +3,7 @@ exports = module.exports = function(app, mongoose) {
 var Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
-	username: {
-      type: String
-    , required: true
-    }
+	username:  { type: String,lowercase : true,unique: true }
   , name: {
       type: String
     , required: true

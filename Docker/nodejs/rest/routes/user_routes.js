@@ -10,7 +10,8 @@ users.route('/user')
 	
 
 users.route('/user/:user_id')
-	 .get(User.findById);
+	 .get(User.findById)
+	 .delete(User.deleteUser);
 
 users.route('/user/:username/:password')
 	 .get(User.getLogin);
